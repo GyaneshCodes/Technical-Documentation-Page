@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Documentation Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav id="navbar">
+        <header>CSS Flexbox</header>
+
+        <div class="nav-line-break"></div>
+
+        <a href="#Introduction" class="nav-link">Introduction</a>
+        <div class="nav-line-break"></div>
+        <a href="#Basic_Concept" class="nav-link">Basic Concept</a>
+        <div class="nav-line-break"></div>
+        <a href="#Aligning_Items" class="nav-link">Aligning Items</a>
+        <div class="nav-line-break"></div>
+        <a href="#Flex_Grow_and_Shrink" class="nav-link">Flex Grow and Shrink</a>
+        <div class="nav-line-break"></div>
+        <a href="#Examples_and_Use_Cases" class="nav-link">Examples and Use Cases</a>
+        <div class="nav-line-break"></div>
+        <a href="#Browser_Compatibility" class="nav-link">Browser Compatibility</a>
+        <div class="nav-line-break"></div>
+        <a href="#Conclusion" class="nav-link">Conclusion</a>
+        <div class="nav-line-break"></div>
+
+    </nav>
+    <main id="main-doc">
+        <section class="main-section" id="Introduction">
+            <header class="heading">Introduction</header>
+            <p>CSS Flexbox is a powerful CSS layout module that provides a flexible and efficient way to arrange and
+                align elements within a container. Unlike traditional layout methods like floats and positioning,
+                Flexbox offers a more predictable and maintainable approach, especially for creating responsive designs.
+            </p>
+            <h3>Key concept</h3>
+            <ul>
+                <li>
+                    <span class="bold">Flex Container:</span> The parent element that holds the flex items. It's the
+                    container that has the <span class="highlight">display: flex;</span> or <span
+                        class="highlight">display: inline-flex;</span> property applied to it.
+                </li>
+                <li>
+                    <span class="bold">Flex Items:</span> The child elements within the flex container. These are the
+                    elements that are arranged and aligned according to the Flexbox rules.
+                </li>
+            </ul>
+            <p>By understanding these core concepts and the various Flexbox properties, you can create complex and
+                responsive layouts with greater ease and control.</p>
+        </section>
+
+        <div class="line-break"></div>
+
+        <section class="main-section" id="Basic_Concept">
+            <header class="heading">Basic Concept</header>
+            <h3>Setting up a Flex Container</h3>
+            <p>To use Flexbox, you first need to designate a parent element as the "Flex Container." This is done by
+                applying the <span class="highlight">display: flex;</span> or <span class="highlight">display:
+                    inline-flex;</span> property to the parent element.</p>
+
+            <ul>
+                <li><span class="highlight">display: flex;</span> This property makes the element a block-level flex
+                    container.</li>
+                <li><span class="highlight">display: inline-flex;</span> This property makes the element an inline-level
+                    flex container.</li>
+            </ul>
+
+            <h4>Example:</h4>
+
+            <code>
+            <pre>
+        .container {
+            display: flex; /* Makes the container a flex container */
+        }
+            </pre>
+            </code>
+
+            <h3>Flex-direction Property</h3>
+            <p>The <spank class="highlight">flex-direction</spank> property controls the main axis of the flex
+                container. This determines the direction in which flex items are placed within the container.</p>
+
+            <ul>
+                <li><span class="highlight">row :</span> (Default) Items are arranged horizontally, from left to right.
+                </li>
+                <li><span class="highlight">row-reverse :</span> Items are arranged horizontally, from right to left.
+                </li>
+                <li><span class="highlight">column :</span> Items are arranged vertically, from top to bottom.</li>
+                <li><span class="highlight">column-reverse :</span> Items are arranged vertically, from bottom to top.
+                </li>
+            </ul>
+
+            <h4>Example:</h4>
+            <code>
+    <pre>
+        .container {
+            display: flex;
+            flex-direction: column; /* Arrange items vertically */
+        }
+    </pre>        
+        </code>
+
+            <h3>Flex-wrap Property</h3>
+            <p>The <span class="highlight">flex-wrap</span> property controls how flex items behave when they overflow
+                the container.</p>
+
+            <ul>
+                <li><span class="highlight">nowrap:</span> (Default) Items will not wrap. They may overflow the
+                    container if necessary.</li>
+                <li><span class="highlight">wrap:</span> Items will wrap to the next line when they exceed the
+                    container's width.</li>
+                <li><span class="highlight">wrap-reverse:</span> Items will wrap to the next line, but in reverse order.
+                </li>
+            </ul>
+
+            <h4>Example:</h4>
+            <code>
+    <pre>
+        .container {
+            display: flex;
+            flex-wrap: wrap; /* Allow items to wrap to the next line */
+        }
+    </pre>        
+        </code>
+
+        </section>
+
+        <div class="line-break"></div>
+
+        <section class="main-section" id="Aligning_Items">
+            <header class="heading">Aligning Items</header>
+            <p>Flexbox provides powerful properties to control how flex items are aligned within the container, both
+                along the main axis and the cross axis.</p>
+
+            <h3>Justify-content Property</h3>
+
+            <p>The <span class="highlight">justify-content</span> property aligns flex items along the main axis of the
+                container.</p>
+
+            <ul>
+                <li><span class="highlight">flex-start:</span> (Default) Aligns items to the start of the container.
+                </li>
+                <li><span class="highlight">flex-end:</span> Aligns items to the end of the container.</li>
+                <li><span class="highlight">center:</span> Centers items within the container.</li>
+                <li><span class="highlight">space-between:</span> Distributes space evenly between items.</li>
+                <li><span class="highlight">space-around:</span> Distributes space evenly around items.</li>
+                <li><span class="highlight">space-evenly:</span> Distributes space evenly between items, including the
+                    start and end of the container.</li>
+            </ul>
+
+            <h4>Example:</h4>
+            <code>
+    <pre>
+        .container {
+            display: flex;
+            justify-content: space-between; /* Space items evenly */
+        }
+    </pre>        
+        </code>
+
+            <h3>Align-items Property</h3>
+
+            <p>The <span class="highlight">align-items</span> property aligns flex items along the cross axis of the
+                container.</p>
+
+            <ul>
+                <li><span class="highlight">flex-start:</span> Aligns items to the start of the cross axis.</li>
+                <li><span class="highlight">flex-end:</span> Aligns items to the end of the cross axis.</li>
+                <li><span class="highlight">center:</span> Centers items along the cross axis.</li>
+                <li><span class="highlight">baseline:</span> Aligns items based on their baselines.</li>
+                <li><span class="highlight">stretch:</span> (Default) Stretches items to fill the cross axis of the
+                    container.</li>
+            </ul>
+
+            <h4>Example:</h4>
+            <code>
+    <pre>
+        .container {
+            display: flex;
+            align-items: center; /* Center items vertically */
+        }
+    </pre>        
+        </code>
+
+            <h3>Align-self Property</h3>
+            <p>The <span class="highlight">align-self</span> property allows you to override the align-items property
+                for individual flex items. This gives you more fine-grained control over how specific items are aligned.
+            </p>
+
+            <ul>
+                <strong>Posible values:</strong>
+                <li><span class="highlight">auto</span></li>
+                <li><span class="highlight">flex-start</span></li>
+                <li><span class="highlight">flex-end</span></li>
+                <li><span class="highlight">center</span></li>
+                <li><span class="highlight">baseline</span></li>
+                <li><span class="highlight">stretch</span></li>
+            </ul>
+
+            <p>By combining these properties, you can achieve a wide variety of layout arrangements.</p>
+
+        </section>
+
+        <div class="line-break"></div>
+
+        <section class="main-section" id="Flex_Grow_and_Shrink">
+
+            <header class="heading">Flex Grow and Shrink</header>
+
+            <p>Flexbox provides properties to control how flex items expand or contract to fill the available space
+                within the container. This is managed primarily through <span class="highlight">flex-grow</span> and
+                <span class="highlight">flex-shrink</span>.
+            </p>
+
+            <h3>Flex-grow Property</h3>
+            <p>The <span class="highlight">flex-grow</span> property determines how much a flex item will grow relative
+                to other flex items in the container when there's extra space available. It accepts a numerical value.
+            </p>
+
+            <ul>
+                <li>A value of <span class="highlight">0</span> (the default) means the item will not grow.</li>
+                <li>A positive value indicates how much the item should grow relative to other items.</li>
+            </ul>
+
+            <h4>Example:</h4>
+            <code>
+    <pre>
+        .container {
+            display: flex;
+          }
+          
+          .item {
+            flex-grow: 1; /* All items will grow equally */
+          }
+          
+          .item.double {
+            flex-grow: 2; /* This item will grow twice as much as the others */
+          }
+    </pre>        
+        </code>
+
+            <p>In this example, if there's extra space in the container, all <span class="highlight">.item</span>
+                elements will grow. However, the <span class="highlight">.item</span> with the class <span
+                    class="highlight">double</span> will grow twice as much as the other items.</p>
+
+            <h3>Flex-shrink Property</h3>
+
+            <p>The <span class="highlight">flex-shrink</span> property determines how much a flex item will shrink
+                relative to other flex items in the container when there's not enough space. It also accepts a numerical
+                value.</p>
+
+            <ul>
+                <li>A value of <span class="highlight">1</span> (the default) means the item can shrink.</li>
+                <li>A value of <span class="highlight">0</span> means the item will not shrink.</li>
+            </ul>
+
+            <h4>Example:</h4>
+            <code>
+    <pre>
+        .container {
+            display: flex;
+          }
+          
+          .item {
+            flex-shrink: 1; /* All items can shrink equally */
+          }
+          
+          .item.no-shrink {
+            flex-shrink: 0; /* This item will not shrink */
+          }
+    </pre>        
+        </code>
+
+            <p>In this example, if the content within the <span class="highlight">.container</span> is too wide to fit,
+                the <span class="highlight">.item</span> elements will shrink to fit. However, the <span
+                    class="highlight">.item</span> with the class <span class="highlight">no-shrink</span> will not
+                shrink, potentially causing an overflow.</p>
+
+        </section>
+
+        <div class="line-break"></div>
+
+        <section class="main-section" id="Examples_and_Use_Cases">
+            <header class="heading">Examples and Use Cases</header>
+
+            <p>Flexbox is incredibly versatile and can be used to create a wide variety of layouts. Here are some common
+                examples:</p>
+
+            <h3>Creating Responsive Layouts</h3>
+
+            <p>Flexbox excels at creating responsive designs that adapt to different screen sizes. By combining <span
+                    class="highlight">flex-direction</span>, <span class="highlight">flex-wrap</span>, and media
+                queries, you can easily change the layout based on the viewport width.</p>
+
+            <h4>Example (simplified):</h4>
+            <code>
+    <pre>
+        .container {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+          }
+          
+          .item {
+            flex-basis: 300px; /* Initial size */
+            flex-grow: 1;      /* Allow items to grow */
+          }
+          
+          @media (max-width: 768px) {
+            .container {
+              flex-direction: column; /* Stack items vertically on smaller screens */
+            }
+            .item {
+              flex-basis: auto; /* Items take full width */
+            }
+          }
+    </pre>        
+        </code>
+
+            <h3>Centering Elements</h3>
+
+            <p>Centering elements both horizontally and vertically is a common task, and Flexbox makes it
+                straightforward.</p>
+
+            <h4>Example:</h4>
+            <code>
+<pre>
+    .container {
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center;     /* Center vertically */
+        height: 100vh; /* Make sure the container takes up the full viewport height */
+      }
+      
+      .centered-element {
+        /* ... content ... */
+      }
+</pre>        
+    </code>
+
+            <h3>Creating Navigation Bars</h3>
+
+            <p>Flexbox is ideal for creating flexible and responsive navigation menus.</p>
+
+            <h4>Example (simplified):</h4>
+            <code>
+<pre>
+    nav {
+        display: flex;
+        justify-content: space-between; /* Distribute space between logo and links */
+        align-items: center;
+      }
+      
+      nav ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+      }
+      
+      nav li {
+        margin-left: 20px;
+      }
+</pre>        
+</code>
+
+            <h3>Building Card Layouts</h3>
+
+            <p>Card-based layouts are common in web design, and Flexbox simplifies their creation.</p>
+
+            <h4>Example:</h4>
+            <code>
+<pre>
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+      
+      .card {
+        flex-basis: 300px;
+        /* ... other card styling ... */
+      }
+</pre>        
+</code>
+
+            <p>These examples illustrate just a few of the many ways you can use Flexbox. Remember to adapt these
+                examples to your specific needs and design requirements. By experimenting and combining different
+                Flexbox properties, you can create complex and sophisticated layouts.</p>
+
+        </section>
+
+        <div class="line-break"></div>
+
+        <section class="main-section" id="Browser_Compatibility">
+            <header class="heading">Browser Compatibility</header>
+
+            <p>Flexbox enjoys excellent browser support across modern browsers, including Chrome, Firefox, Safari, Edge, and most mobile browsers.  However, it's always a good practice to be aware of potential compatibility issues, especially when supporting older browsers.</p>
+
+            <h4>Key Points:</h4>
+
+            <ul>
+                <li><span class="bold">Modern Browsers:</span> Flexbox is fully supported in all current versions of major browsers.</li>
+                <li><span class="bold">Older Browsers (IE):</span> Older versions of Internet Explorer (especially IE 9 and 10) had partial or buggy implementations of Flexbox. If you need to support these older browsers, you might need to use prefixes or consider fallback solutions. IE 11 has much better support.</li>
+                <li><span class="bold">Prefixes (Generally Not Needed):</span> In the past, vendor prefixes (like -webkit-, -moz-, -ms-) were required for some Flexbox properties. However, these are largely no longer necessary for modern browsers. It's generally safe to omit them unless you're specifically targeting very old browser versions.</li>
+            </ul>
+
+        </section>
+
+        <div class="line-break"></div>
+
+        <section class="main-section" id="Conclusion">
+
+            <header class="heading">Conclusion</header>
+
+            <p>CSS Flexbox has revolutionized web layout, offering a powerful and flexible way to arrange and align elements.  It simplifies the creation of complex and responsive designs, making it easier to build websites that adapt seamlessly to different screen sizes and devices.</p>
+            <p>From basic alignment and ordering to more advanced techniques like controlling item growth and shrinkage, Flexbox provides a comprehensive set of tools for managing layout.  By mastering the concepts and properties discussed in this documentation, you can significantly improve your workflow and create more maintainable and adaptable web designs.</p>
+            <p>Remember to practice and experiment with Flexbox to fully grasp its capabilities.  The examples provided here serve as a starting point for your exploration.  Don't hesitate to consult the provided resources and online documentation for more in-depth information and inspiration.</p>
+            <p>Flexbox is an essential skill for any modern web developer.  By incorporating it into your toolkit, you'll be well-equipped to tackle a wide range of layout challenges and build beautiful, responsive, and user-friendly websites.</p>
+
+        </section>
+
+    </main>
+</body>
+
+</html>
